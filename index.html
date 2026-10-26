@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agenda propia</title>
+<meta name="description" content="Agenda de citas tipo Calendly conectada a tu Google Calendar, para pegar en cualquier sitio web.">
+<style>
+  :root{--bg:#F3F1ED;--ink:#121212;--muted:#6F6C67;--line:rgba(18,18,18,.12);}
+  *{box-sizing:border-box;margin:0;}
+  body{background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55;}
+  main{max-width:640px;margin:0 auto;padding:72px 18px;}
+  .tag{font:11px ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+  h1{font-size:clamp(34px,8vw,52px);font-weight:300;letter-spacing:-.035em;line-height:1.05;margin:14px 0 16px;}
+  h1 b{font-weight:600;}
+  p{color:#3A3A3A;font-size:17px;}
+  .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;}
+  .btn{border:0;font:inherit;font-size:15px;font-weight:500;height:50px;padding:0 22px;border-radius:999px;cursor:pointer;background:var(--ink);color:var(--bg);}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);}
+  ol{margin:40px 0 0;padding-left:20px;color:#3A3A3A;}
+  li{margin:6px 0;}
+  a{color:inherit;}
+</style>
+</head>
+<body>
+<main>
+  <span class="tag">Demostración</span>
+  <h1>Tu propia agenda, <b>conectada a tu Google Calendar.</b></h1>
+  <p>Así se ve en tu sitio. Abre la ventana y prueba: los horarios de esta demostración son inventados y nada se guarda.</p>
+  <div class="row">
+    <button class="btn" data-agenda="">Agendar una cita</button>
+    <button class="btn ghost" data-agenda="Asesoría de imagen">Con un servicio</button>
+  </div>
+  <ol>
+    <li>La persona llena sus datos.</li>
+    <li>Ve solo los horarios en que estás libre.</li>
+    <li>La cita aparece en tu calendario y a ella le llega la invitación.</li>
+  </ol>
+  <p style="margin-top:32px;font-size:15px">Instrucciones para instalarla en tu sitio: <a href="https://github.com/juanfelareal/agenda-propia#readme">README del repositorio</a>.</p>
+</main>
+
+<script>
+  window.AGENDA = {
+    url: '', // vacío = modo demostración
+    anfitriona: 'conmigo',
+    preguntas: [
+      { pregunta: '¿Cómo me conociste?', opciones: ['Instagram', 'Recomendación', 'Google', 'Otro'] },
+      { pregunta: '¿Qué quieres resolver?', tipo: 'texto-largo', ejemplo: 'Cuéntame en pocas palabras' },
+    ],
+  };
+</script>
+<script src="widget/agenda.js" defer></script>
+</body>
+</html>
